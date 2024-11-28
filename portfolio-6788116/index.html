@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Nutdanai Suesuthikul, showcasing programming projects, certifications, and personal brand story.">
+    <title>Nutdanai Suesuthikul - Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .projects, .competitions, .certifications {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .project-card, .competition-card, .certification-card {
+            background-color: #e9ecef;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            flex: 1 1 calc(33% - 20px);
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover, .competition-card:hover, .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .dark-mode-btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .dark-mode-btn:hover {
+            background-color: #444;
+        }
+
+       
+        body.dark-mode {
+            background-color: #333;
+            color: white; 
+        }
+
+        body.dark-mode header {
+            background-color: #444;
+        }
+
+        body.dark-mode section {
+            background-color: #555;
+            color: white;  
+        }
+
+        body.dark-mode .project-card, body.dark-mode .competition-card, body.dark-mode .certification-card {
+            background-color: #666;
+            color: white;  
+        }
+
+        body.dark-mode a {
+            color: white; 
+            text-decoration: none;  
+        }
+
+        body.dark-mode a:hover {
+            color: #007BFF;  
+            text-decoration: underline;  
+        }
+
+        
+        body.dark-mode .resume-link,
+        body.dark-mode .linkedin-profile {
+            color: #007BFF;  
+        }
+
+        body.dark-mode .resume-link:hover,
+        body.dark-mode .linkedin-profile:hover {
+            color: #0056b3;  
+            text-decoration: underline;  
+        }
+
+        body.dark-mode .profile-section {
+            background-color: #444;
+            color: white;  
+        }
+
+        body.dark-mode .profile-section h2 {
+            color: white;  
+        }
+
+        body.dark-mode .profile-section p {
+            color: white;  
+        }
+
+        body.dark-mode h2 {
+            color: white;  
+        }
+        
+body.dark-mode #certifications {
+    background-color: #333;  
+    color: white;  
+}
+
+body.dark-mode .certifications-list {
+    background-color: #333;  
+}
+
+body.dark-mode .certification-card {
+    background-color: #555;  
+    color: white;  
+}
+
+body.dark-mode .certification-text h3 {
+    color: white;  
+}
+
+body.dark-mode .certificate-text p {
+    color: white;  
+}
+
+body.dark-mode .certification-card img {
+    border-radius: 8px;
+    border: 2px solid #fff;  
+}
+
+
+       
+        .profile-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-section img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .profile-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .profile-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+       
+.education {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+.education-card {
+    background-color: #e9ecef;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    flex: 1 1 calc(48% - 20px); 
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.education-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.education-content img {
+    width: 150px; 
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px; 
+}
+
+.education-text h3 {
+    margin-bottom: 10px;
+}
+
+.education-text p {
+    margin: 5px 0;
+}
+
+
+#certifications {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.certifications-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.certification-card {
+    background-color: #e9ecef;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    flex: 1 1 calc(48% - 20px); 
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.certification-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.certificate-image-large {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px; 
+}
+
+.certificate-image-small {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px; 
+}
+
+
+.certificate-text {
+    max-width: 60%;
+}
+
+.certificate-text h3 {
+    margin-bottom: 10px;
+}
+
+.certificate-text p {
+    margin: 5px 0;
+}
+
+.resume-preview {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.resume-preview-img {
+    max-width: 100%;
+    width: 700px; 
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resume-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.resume-link:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode #education {
+    background-color: #444;  
+    color: white; 
+}
+
+body.dark-mode .education-card {
+    background-color: #555;  
+    color: white;  
+}
+
+body.dark-mode .education-text h3, 
+body.dark-mode .education-text p {
+    color: white;  
+}
+
+body.dark-mode .education-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+body.dark-mode #resume {
+    background-color: #444;
+    color: white;  
+}
+
+body.dark-mode .resume-preview-img {
+    border: 2px solid #fff;  
+}
+
+body.dark-mode .resume-link {
+    background-color: #007bff;  
+    color: #fff;  
+    text-decoration: none;  
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .resume-link:hover {
+    background-color: #0056b3;  
+    text-decoration: none;
+}
+
+
+#resume {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+body.dark-mode #important-links {
+    color: white;
+}
+
+body.dark-mode #important-links a {
+    color: #007BFF; 
+}
+
+body.dark-mode #important-links a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+body.dark-mode .resume-preview-img {
+    filter: none; 
+}
+
+
+body.dark-mode img {
+    filter: none; 
+}
+
+
+
+.linkdin-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.linkdin-link:hover {
+    background-color: #0056b3;
+}
+
+.website-preview {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.website-preview h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.website-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.website-preview img:hover {
+    transform: scale(1.05);
+}
+
+.website-preview p {
+    margin-top: 10px;
+    color: #555;
+}
+/* Default Website Preview Styling */
+.website-preview {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.website-preview h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.website-preview img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.website-preview img:hover {
+    transform: scale(1.05);
+}
+
+.website-preview p {
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Dark Mode Styling for Website Preview */
+body.dark-mode .website-preview {
+    background-color: #444;  /* Dark background */
+    color: white;            /* White text */
+}
+
+body.dark-mode .website-preview h3 {
+    color: white;            /* White text */
+}
+
+body.dark-mode .website-preview p {
+    color: white;            /* White text */
+}
+
+body.dark-mode .website-preview img {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);  /* Lighter shadow in dark mode */
+}
+
+
+    </style>
+</head>
+<body>
+
+    <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+   
+    <header>
+        <h1>Nutdanai Suesuthikul's Portfolio</h1>
+        <p>Welcome to my personal portfolio where I showcase my work and journey!</p>
+    </header>
+
+    <!-- Profile Section -->
+    <section id="profile" class="profile-section">
+        
+        <!-- <img src="https://u18tihl.icehockeythailand.org/wp-content/uploads/2022/07/ONO.jpg" alt="Your Photo">  -->
+        <img src="picture/my.jpg" alt="Your Photo"> 
+        <h2>Mr. Nutdanai Suesuthikul</h2>
+        <p>Student at Mahidol University in the Faculty of Information and Communication Technology.</p>
+    </section>
+
+   
+    <div class="container">
+        <!-- Personal Brand Story -->
+        <section id="brand-story">
+            <h2>Personal Brand Story</h2>
+            <p>
+                As an ICT student, I am deeply passionate about exploring the dynamic and ever-evolving world of technology. My
+journey in this field is driven by a keen interest in understanding how digital tools, software, and networks shape the way
+we communicate, work, and interact with the world. With a solid foundation in programming, systems analysis, and
+cybersecurity, I am eager to expand my skills and knowledge to tackle real-world challenges. Being an ICT student, I am
+not only learning technical concepts but also honing critical thinking and problem-solving abilities that will help me
+contribute meaningfully to the tech industry and society.
+            </p>
+        </section>
+
+        <!-- education history -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education">
+                
+                <div class="education-card">
+                    <div class="education-content">
+                        <img src="picture/Mahidol_Ulogo.png" width="200" height="200" alt="Mahidol Logo">
+                        <div class="education-text">
+                            <h3>Mahidol University</h3>
+                            <p><strong>Faculty of Information and Communication Technology (2024 - Present)</strong></p>
+                            <p></p>
+                            <p><ul>
+                                <li>Study of C programming language.</li>
+                                <li>Exploring ethical concerns,data privacy laws,intellectual property rights and legal issues related to technology use.</li></ul></p>
+                            
+                        </div>
+                    </div>
+                </div>
+        
+                
+                <div class="education-card">
+                    <div class="education-content">
+                        <img src="picture/ps logo.png" alt="ABC High School Logo">
+                        <div class="education-text">
+                            <h3>Pothisarn Pittayakorn School</h3>
+                            <p><strong>Computer Science Specialization Track (2021 - 2023)</strong></p>
+                            <p> <ul>
+                                <li>Learning various programming languages like Python, C and others to write software, develop applications, and solve
+                                    problems,3D modeling, animation,Designing and creating websites and web applications.
+                                     This includes front-end and back-end development</li>
+                                
+
+            
+                            </ul></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!--Project -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>CSWE Project (2021)</h3>
+                    <p><strong>Description:</strong> The project involves designing, developing, and deploying a fully functional website.I assisted in
+                        designing and improving the web UX/UI.Through this experience, I gained practical skills in web design and
+                        developed a deeper understanding of how design can improve user experience and functionality in real-world
+                        projects.</p>
+                    
+                </div>
+
+                <!-- <div class="project-card">
+                    <h3>Project 2: [Project Title]</h3>
+                    <p><strong>Description:</strong> [Provide a short description of the project you worked on. What problem did it solve? What was your role?]</p>
+                    <p><strong>Tools Used:</strong> [List the technologies, languages, or frameworks used for this project.]</p>
+                </div> -->
+
+                
+            </div>
+        </section>
+
+        <!-- Competitions -->
+        <!-- Competitions/Experiences -->
+<!-- Competitions/Experiences -->
+<section id="competitions">
+    <h2>Competitions/Experiences</h2>
+    <div class="competitions">
+        
+        <div class="competition-card">
+            <h3>Participate in Computer Science Camp (2021)</h3>
+            
+            <ul>
+                <li>Learn how to create a smart plant factory using Arduno.</li>
+                <li>Gain experience with C/C++ programming specifically for the Arduino platform.</li>
+                <li>Learn how to automate systems such as controlling the watering system based on soil moisture,
+                    lighting systems or fans for temperature control.</li>
+                <li>Developing teamwork skills by participating in group activities.</li>
+                <li>Use problem-solving skills to solve the problems that occur.</li>
+            </ul>
+        </div>
+
+      
+        <div class="competition-card">
+            <h3>Participate in The Promotion of Academic Olympiad and Development of Science Education Foundation
+                under the patronage of Her Royal Highness Princess Galyani Vadhana Krom Luang Naradhiwas
+                Rajanagarindra (POSN) Geography at Department of Geography,Faculty of Arts,Chulalongkorn
+                university (2023)</h3>
+            
+            <ul>
+                <li>Study key topics such as physical geography, human geography, and environmental science.</li>
+                <li>Get introduced to technologies like GIS (Geographic Information Systems), remote sensing and
+                    cartography to visualize and analyze geographical data.</li>
+                <li>Use collected data to create maps.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+        <!-- Certifications and Certificates -->
+        <section id="certifications">
+            <h2>Certificates</h2>
+            <!-- <p>If you have earned any certifications or received any certificates, list them here. If not, you can update this section later.</p>
+         -->
+            <div class="certifications-list">
+                <!-- Certificate 1 -->
+                <div class="certification-card">
+                    <img src="picture/certificate3.jpg" alt="Certificate 1" class="certificate-image-large"> 
+                    <div class="certificate-text">
+                        <h3>2023 ICE HOCKEY U18 ASIA AND OCEANIA CHAMPIONSHIP </h3>
+                        <p><strong>Issued by:</strong> International Ice Hockey Federation</p>
+                        <p><strong>Issued on:</strong> March, 2023</p>
+                        <p><strong>Description:</strong> I played as a defenseman for Thailand national team and this develop my teamworking skill.</p>
+                    </div>
+                </div>
+        
+                <!-- Certificate 2 -->
+                <div class="certification-card">
+                    <img src="picture/certificate4.jpg" alt="Certificate 2" class="certificate-image-small"> 
+                    <div class="certificate-text">
+                        <h3>Certification of participating an online training"Smart plant factory"</h3>
+                        <p><strong>Issued by:</strong> Pothisarn Pittayakorn School</p>
+                        <p><strong>Issued on:</strong> september, 2021</p>
+                        <p><strong>Description:</strong> Learning of IOT with the plant factory simmulator hand on activity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Resume -->
+        <section id="resume">
+    <h2>Resume</h2>
+    <p>You can view my resume using the link below:</p>
+    
+    <!-- Resume Preview Section -->
+    <div class="resume-preview">
+        <img src="picture/6788116__Resume (1).pdf" alt="Resume Preview" class="resume-preview-img">
+        <!-- Replace 'your-resume-preview-image.jpg' with your actual resume preview image -->
+    </div>
+
+    <a href="https://drive.google.com/file/d/1WDtlAKyo_lc2nzACZz7jdepPDBMxGTEi/view?usp=drive_link" class="resume-link" download>View Resume</a>
+</section>
+
+
+        <!-- Important Links -->
+        <!-- Important Links -->
+        <section id="important-links">
+            <h2>Important Links</h2>
+            <p>Connect with me on LinkedIn:</p>
+            
+            <!-- LinkedIn Button (styled the same as Resume Button) -->
+            <a href="https://www.linkedin.com/in/nutdanai-suesuthikul-55b726339" class="linkdin-link" target="_blank">Visit My LinkedIn Profile</a>
+        
+            <!-- Website Preview Section -->
+            <div class="website-preview">
+                <h3>Website Preview</h3>
+                <a href="https://www.linkedin.com/in/nutdanai-suesuthikul-55b726339" target="_blank">
+                    <img src="picture/linkdin.jpg" alt="Website Preview" class="website-preview-img">
+                </a>
+                <p>Click the image above to visit my website!</p>
+            </div>
+        </section>
+        
+        
+
+    </div>
+
+    <script>
+       
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+</html>
